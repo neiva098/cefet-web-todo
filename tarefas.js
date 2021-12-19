@@ -5,3 +5,8 @@ class Tarefa {
         this.realizada = realizada
     }
 }
+
+const tarefas = [
+    new Tarefa('Comprar leite', 'compras', false), 
+    new Tarefa('Escutar chimbinha', 'lazer', true)
+];
