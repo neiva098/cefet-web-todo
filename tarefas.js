@@ -43,3 +43,22 @@ function incluiTarefa(event) {
 }
 
 document.querySelector('#incluir-nova-tarefa').addEventListener('click', incluiTarefa);
+
+document.querySelector('#filtro-de-categoria').addEventListener('change', (event) => {
+    const categoria = event.currentTarget.value;
+    const listaDeTarefas = document.querySelectorAll('#lista-tarefas li');
+    
+    if (categoria) {
+        for (const tarefa of listaDeTarefas) {
+            if (tarefa.classList.contains(`categoria-${categoria}`)) {
+                tarefa.classList.remove('retido-no-filtro');
+            }
+            else tarefa.classList.add('retido-no-filtro');
+        }
+        return
+    }
+
+    for (const tarefa of listaDeTarefas) {
+        tarefa.classList.remove('retido-no-filtro');
+    }
+});
